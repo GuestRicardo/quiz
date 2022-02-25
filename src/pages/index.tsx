@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 
 
-const BASE_URL = 'https://quiz-ten-delta.vercel.app/api'
+const BASE_URL = 'https://quizfinal-guestricardo.vercel.app/api'
 
 export default function Home() {
   const router = useRouter()
