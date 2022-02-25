@@ -23,7 +23,7 @@ interface QuestaoProps {
 export default function Questao(props: QuestaoProps) {
     const questao = props.valor
 
-    function renderizarRespostas() {
+    function RenderizarRespostas() {
         return questao.respostas.map((resposta, i) => {
             return (
                 // eslint-disable-next-line react/jsx-key
@@ -44,7 +44,7 @@ export default function Questao(props: QuestaoProps) {
             <Enunciado texto={questao.enunciado} />
             <Temporizador key={questao.id} duracao={props.tempoParaResposta ?? 10} 
             tempoEsgotado={props.TempoEsgotado}/>
-            {renderizarRespostas()}
+            {RenderizarRespostas()}
         </div>
     )
 }

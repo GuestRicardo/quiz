@@ -10,7 +10,7 @@ interface questionarioProps {
     irPraProximoPasso: () => void
 }
 
-export default function Questionario(props: questionarioProps) {
+export default function questionario(props: questionarioProps) {
 
     function respostaFornecida(indice: number) {
         if (props.questao.naoRespondida) {

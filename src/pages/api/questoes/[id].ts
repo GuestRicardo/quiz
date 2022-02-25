@@ -2,7 +2,7 @@
 import QuestaoModel from "../../../model/questao"
 import questoes from "./bancoDeQuestoes"
 
-export default (req, res) => {
+export default function questoesProrId (req, res) {
   const idSelecionado = +req.query.id
   const unicaQuestaoOuNada = questoes.filter(questao => questao.id === idSelecionado)
   if (unicaQuestaoOuNada.length === 1) {

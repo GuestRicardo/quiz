@@ -22,10 +22,10 @@ export default function Home() {
     setIdsDasQuestoes(idsDasQuestoes)
   }
 
-  async function carregarQuestao(idQuestao: number) {
+  async function CarregarQuestao(idQuestao: number) {
     const resp = await fetch(`${BASE_URL}/questoes/${idQuestao}`)//faz chamadas http para o servidor
     const json = await resp.json()
-    const novaQuestao = QuestaoModel.criarUsandoObjeto(json)
+    const novaQuestao = QuestaoModel.CriarUsandoObjeto(json)
     setQuestao(novaQuestao)
   }
 
@@ -34,30 +34,30 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    idsDasQuestoes.length > 0 && carregarQuestao(idsDasQuestoes[0])
+    idsDasQuestoes.length > 0 && CarregarQuestao(idsDasQuestoes[0])
   }, [idsDasQuestoes])
 
-  function questaoRespondida(questaoRespondida: QuestaoModel) {
+  function QuestaoRespondida(questaoRespondida: QuestaoModel) {
     setQuestao(questaoRespondida)
     const acertou = questaoRespondida.acertou
     setRespostasCertas(respostasCertas + (acertou ? 1 : 0))
 
   }
 
-  function idProximaPergunta() {
+  function IdProximaPergunta() {
    
       const proximoIndice = idsDasQuestoes.indexOf(questao.id) + 1 //indexOf faz a busca do id e mostra o elemento
       return idsDasQuestoes[proximoIndice]
  
   }
 
-  function irPraProximoPasso() {
-    const proximoId = idProximaPergunta()
-    proximoId ? irPraProximaQuestao(proximoId) : finalizar()
+  function IrPraProximoPasso() {
+    const proximoId = IdProximaPergunta()
+    proximoId ? IrPraProximaQuestao(proximoId) : finalizar()
   }
 
-  function irPraProximaQuestao(proximoId: number) {
-    carregarQuestao(proximoId)
+  function IrPraProximaQuestao(proximoId: number) {
+    CarregarQuestao(proximoId)
   }
 
   function finalizar() {
@@ -74,9 +74,9 @@ export default function Home() {
   return questao ?(
     <Questionario
       questao={questao}
-      ultima={idProximaPergunta() === undefined}
-      questaoRespondida={questaoRespondida}
-      irPraProximoPasso={irPraProximoPasso}
+      ultima={IdProximaPergunta() === undefined}
+      questaoRespondida={QuestaoRespondida}
+      irPraProximoPasso={IrPraProximoPasso}
     />
   ) : false
 }
