@@ -1,0 +1,85 @@
+.resposta {
+    display: flex;
+    min-width: 500px;
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+    perspective: 1500px;
+
+}
+
+.conteudoresposta {
+    position: relative;
+    display: flex;
+    flex: 1;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.respostaRevelada.conteudoresposta{
+transform: rotateY(180deg);
+
+}
+
+.verso>div {
+    /**esta sendo alternada as duas divs q esta dentro da div do verso*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.certa {
+    background-color: #2baa6d;
+}
+
+.errada {
+    background-color: #e44a4c;
+}
+.certa .valor, .errada .valor{
+    font-size: 1.5rem;
+}
+.letras {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-right: 20px;
+    color: aliceblue;
+    cursor: pointer;   
+}
+
+.valor {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.frente {
+    background-color: aliceblue;
+    color: black;
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;   
+
+}
+.verso{
+    transform: rotateY(180deg);
+}
+
+.frente,
+.verso {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
