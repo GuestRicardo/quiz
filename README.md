@@ -1,2 +1,2 @@
 acesse!
-https://github.com/GuestRicardo/infosDiarias.git
+https://quiz-ten-delta.vercel.app/
